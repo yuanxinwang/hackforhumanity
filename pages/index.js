@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Map from '../component/Map'
+
 import SignIn from '../component/SignIn'
+
 
 const Home = () => (
   <div className="container">
@@ -11,9 +13,11 @@ const Home = () => (
 
     <main>
 
+
       <SignIn>
         
     </SignIn>
+
 
 
     </main>
