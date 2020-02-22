@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
  
 class Map extends Component {
@@ -60,6 +61,7 @@ class Map extends Component {
           defaultZoom={14}
           yesIWantToUseGoogleMapApiInternals={true}
         >
+
         </GoogleMapReact>
       </div>
     );

@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Map from '../component/Map'
+
 import SignIn from '../component/SignIn'
+
 
 const Home = () => (
   <div className="container">
@@ -14,9 +16,11 @@ const Home = () => (
         Welcome to <a href="https://nextjs.org">Next.js!</a>
       </h1>
 
+
       <SignIn>
         
     </SignIn>
+
 
 
     </main>
