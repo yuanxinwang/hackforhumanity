@@ -11,8 +11,9 @@ class Home extends React.Component{
 
   render(){
     return(
+      <h1 position="absolute">sda</h1>,
     <MyMap>
-
+      
     </MyMap>  );
 
   };

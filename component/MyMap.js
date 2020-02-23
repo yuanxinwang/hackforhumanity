@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import AddDialog from '../component/AddDialog'
+import DisplayDialog from '../component/DisplayDialog'
 import SignIn from '../component/SignIn'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import { Button } from '@material-ui/core';
@@ -17,6 +18,8 @@ class MyMap extends React.Component{
         editEnable: false,
         curSelect:null,
         addDialog:false,
+        displayDialog:false,
+        info:null,
         curSelectPos:null,
     }
   }
@@ -24,6 +27,8 @@ class MyMap extends React.Component{
   diaLogEnd(){
       this.setState({
           addDialog: false,
+          displayDialog: false,
+          info:null,
       })
   }
 
@@ -44,13 +49,27 @@ class MyMap extends React.Component{
                         lng: pos.long,
                     }
                     toReturn.push(
-                        <Marker position={posi}> </Marker>
+                        <Marker data={pos}
+                         onClick={()=>{
+                            console.log("click already exist");  
+                            this.setState(
+                                {displayDialog: true,
+                                info:pos}
+                            ); 
+                        }
+                    }
+                    
+                        >
+
+                        </Marker>
                     );
                 }
             );
             this.setState({
                 data: toReturn,
                 addDialog: false,
+                displayDialog: false,
+                info: null
             });
         }
     );
@@ -73,7 +92,21 @@ class MyMap extends React.Component{
                         lng: pos.long,
                     }
                     toReturn.push(
-                        <Marker position={posi}> </Marker>
+
+                        <Marker data={pos}
+                        onClick={()=>{
+                            console.log("click already exist");
+                            this.setState(
+                                {displayDialog: true,
+                                info:pos,
+                                }
+                            );}
+                        }
+                        
+                            
+                        >
+
+                        </Marker>
                     );
                 }
             );
@@ -127,8 +160,8 @@ class MyMap extends React.Component{
       const c = this.diaLogEnd.bind(this);
       let helper = this.mapClicked.bind(this);
     const mapStyles = {
-      width: '80%',
-      height: '80%',
+      width: '100%',
+      height: '100%',
     };
     if(this.state.loaded===false){
         return <div></div>
@@ -147,6 +180,10 @@ class MyMap extends React.Component{
         {this.state.addDialog?(<AddDialog op={this.state.addDialog} Close={c} pos={this.state.curSelectPos}
         postUpdate={p}>
         </AddDialog>):null}
+
+        {this.state.displayDialog?(<DisplayDialog info={this.state.info} op={this.state.displayDialog} Close={c} pos={this.state.curSelectPos}
+        >
+        </DisplayDialog>):null}
     <Map
         google={this.props.google}
         zoom={12}
