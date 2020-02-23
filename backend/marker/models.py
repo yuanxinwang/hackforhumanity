@@ -11,5 +11,3 @@ class Marker(models.Model):
     description = models.CharField(max_length=500)
     resolved = models.BooleanField()
     pub_date = models.DateTimeField('date published')
-
-
