@@ -58,7 +58,9 @@ export default function SignIn() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-            <Link href="../pages/home.js">
+
+            <Link href="/about">
+
                 <a> tuji </a>
             </Link>
           Sign in
