@@ -5,21 +5,22 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
+import Linka from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Link from 'next/link';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
+      <Linka color="inherit" href="https://material-ui.com/">
         Your Website
-      </Link>{' '}
+      </Linka>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -57,6 +58,9 @@ export default function SignIn() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
+            <Link href="/about">
+                <a> tuji </a>
+            </Link>
           Sign in
         </Typography>
         <form className={classes.form} noValidate>
@@ -92,19 +96,22 @@ export default function SignIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onSubmit={()=>{
+                console.log("goooood");
+            }}
           >
             Sign In
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
+              <Linka href="#" variant="body2">
                 Forgot password?
-              </Link>
+              </Linka>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Linka href="#" variant="body2">
                 {"Don't have an account? Sign Up"}
-              </Link>
+              </Linka>
             </Grid>
           </Grid>
         </form>
