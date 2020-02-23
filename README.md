@@ -2,11 +2,9 @@ Devpost
 
 https://devpost.com/software/help-locator/joins/n3aIflu43AK_9K-fXVLr6Q
 
-Webhost
+Website: https://hackforhumanity-f6gnom2qc.now.sh/
 
-Website: https://helplocator.appspot.com/
-
-API: https://hackforhumanity.appspot.com/
+API: https://hackforhumanity.appspot.com/marker/
 
 Slides
 
