@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'login.apps.LoginConfig',
     'marker.apps.MarkerConfig',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -157,3 +158,5 @@ MEDIA_URL= "/media/"
 
 STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
+
+CORS_ORIGIN_ALLOW_ALL = True
