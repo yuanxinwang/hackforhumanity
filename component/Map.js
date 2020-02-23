@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
  

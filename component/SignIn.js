@@ -59,7 +59,7 @@ export default function SignIn() {
         </Avatar>
         <Typography component="h1" variant="h5">
 
-            <Link href="/about">
+            <Link href="/home">
 
                 <a> tuji </a>
             </Link>
