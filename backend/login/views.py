@@ -1,4 +1,3 @@
-      # add this
 from .serializers import LoginSerializer      # add this
 from .models import Login                   # add this
 from rest_framework import generics
